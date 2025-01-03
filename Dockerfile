@@ -2,7 +2,9 @@ FROM node:18-slim
 
 WORKDIR /user/src/app
 
-COPY package.json ./
+COPY package.json yarn.lock .yarnrc.yml ./
+COPY .yarn ./.yarn
+
 RUN yarn
 
 COPY . . 
